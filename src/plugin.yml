@@ -7,3 +7,5 @@ description: zzz
 commands:
   jail:
     description: Surrounds a target in a bedrock prison
+  scaffold:
+  	description: Temp scaffolds a player with barrier blocks
