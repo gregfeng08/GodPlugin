@@ -22,18 +22,25 @@ public class JesusCommand implements CommandExecutor{
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player p = Bukkit.getPlayer(args[0]);
-		p.sendMessage("God has touched you for the next 30 seconds.");
+		
+		p.sendMessage("God has touched you for the next 10 seconds.");
+		
 		BukkitRunnable runnable = new BukkitRunnable() {
-	        @Override
+	        int countdown = 200;
 	        public void run() {
-	        	createScaffold(plugin, p.getLocation().getBlock());
+	        	if(countdown==0) {
+	        		cancel();
+	        	}
+	        	createScaffold(plugin, p.getLocation().subtract(0,1,0).getBlock());
+	        	countdown-=1;
 	        }
 	    };
-	    runnable.runTaskTimer(plugin, 1, 600);
+	    runnable.runTaskTimer(plugin, 1, 1);
+	    
 		return false;
 	}
 	static void createScaffold(Main plugin, Block b) {
-		b.setType(Material.DIRT);
+		b.setType(Material.BARRIER);
 		BukkitRunnable runnable = new BukkitRunnable() {
 	        @Override
 	        public void run() {

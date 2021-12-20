@@ -7,5 +7,13 @@ description: zzz
 commands:
   jail:
     description: Surrounds a target in a bedrock prison
+    usage: |
+      /<command> [player]
   scaffold:
-  	description: Temp scaffolds a player with barrier blocks
+    description: Temporarily scaffolds for a player
+    usage: |
+      /<command> [player]
+  bubble:
+    description: Creates an underwater bubble for the player
+    usage: |
+      /<command> [on/off] [player]
