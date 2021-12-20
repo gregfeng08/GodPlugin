@@ -29,6 +29,7 @@ public class JesusCommand implements CommandExecutor{
 	        int countdown = 200;
 	        public void run() {
 	        	if(countdown==0) {
+	        		p.sendMessage("Your strength begins to falter.");
 	        		cancel();
 	        	}
 	        	createScaffold(plugin, p.getLocation().subtract(0,1,0).getBlock());
@@ -36,8 +37,7 @@ public class JesusCommand implements CommandExecutor{
 	        }
 	    };
 	    runnable.runTaskTimer(plugin, 1, 1);
-	    
-		return false;
+		return true;
 	}
 	static void createScaffold(Main plugin, Block b) {
 		b.setType(Material.BARRIER);

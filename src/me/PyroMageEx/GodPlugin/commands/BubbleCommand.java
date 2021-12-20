@@ -34,10 +34,12 @@ public class BubbleCommand implements CommandExecutor{
 		
 		if(args[0].equals("on")) {
 			toggle = true;
+			target.sendMessage("The god of fish smiles upon you.");
 			runnable = new BukkitRunnable() {
 				int countdown = 600;
 		        public void run() {
 		        	if(countdown==0) {
+		        		target.sendMessage("You have lost the ability to part the seas");
 		        		cancel();
 		        	}
 		        	double radius = 3;
@@ -57,11 +59,13 @@ public class BubbleCommand implements CommandExecutor{
 		        	}
 		        	countdown-=1;
 		    	}
-		        
 		    };
 		    runnable.runTaskTimer(plugin, 1, 1);
+		    
+		    return true;
 		} else if (args[0].equals("off")){
 			toggle = false;
+			return true;
 		} else {
 			sender.sendMessage("Invalid Option, use /bubble [on/off] [player]");
 		}
