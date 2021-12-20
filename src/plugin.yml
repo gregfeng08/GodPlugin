@@ -1,0 +1,9 @@
+name: GodPlugin
+version: 1.0
+author: PyroMageEx
+main: me.PyroMageEx.GodPlugin.Main
+description: zzz
+
+commands:
+  jail:
+    description: Surrounds a target in a bedrock prison
