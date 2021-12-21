@@ -14,6 +14,18 @@ commands:
     usage: |
       /<command> [player]
   bubble:
-    description: Creates an underwater bubble for the player
+    description: Creates an under water bubble for the player
     usage: |
-      /<command> [on/off] [player]
+      /<command> [player]
+  splash:
+    description: 50/50 Splashes someone with either good or bad effects
+    usage: |
+      /<command> [player]
+  swapinv:
+    description: swaps the inventories of two players
+    usage: |
+      /<command> [player1] [player2]
+  remheld:
+    description: removes the held item of a player
+    usage: |
+      /<command> [player]

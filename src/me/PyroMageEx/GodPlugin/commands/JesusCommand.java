@@ -23,8 +23,7 @@ public class JesusCommand implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player p = Bukkit.getPlayer(args[0]);
 		
-		p.sendMessage("God has touched you for the next 10 seconds.");
-		
+		p.sendMessage("You gain the ability to fly (somwhat).");
 		BukkitRunnable runnable = new BukkitRunnable() {
 	        int countdown = 200;
 	        public void run() {
